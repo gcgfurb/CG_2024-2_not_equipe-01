@@ -8,50 +8,43 @@ namespace gcgcg
 {
     internal class SrPalito : Objeto
     {
-        private double raio = 0.5;   // Tamanho inicial
-        private double angulo = 45;  // Ângulo inicial
-        private Ponto4D origem;      // Ponto inicial para os pés (na origem)
+        private double raio = 0.5; 
+        private double angulo = 45;  
+        private Ponto4D origem;     
 
         public SrPalito(Objeto _paiRef, ref char _rotulo) : base(_paiRef, ref _rotulo)
         {
-            origem = new Ponto4D(0, 0); // Sr. Palito "nasce" com os pés na origem
+            origem = new Ponto4D(0, 0); 
             AtualizarPosicao();
         }
 
         private void AtualizarPosicao()
         {
-            // Limpa os pontos anteriores
             base.pontosLista.Clear();
 
-            // Calcula a nova posição da cabeça usando seno e cosseno (raio e ângulo)
             double x = origem.X + raio * Math.Cos(Math.PI * angulo / 180.0);
             double y = origem.Y + raio * Math.Sin(Math.PI * angulo / 180.0);
             Ponto4D cabeca = new Ponto4D(x, y);
 
-            // Adiciona os pés na origem e a cabeça na posição calculada
-            base.PontosAdicionar(origem);   // Pés
-            base.PontosAdicionar(cabeca);   // Cabeça
+            base.PontosAdicionar(origem);
+            base.PontosAdicionar(cabeca);
 
-            // Atualiza o objeto na tela
             Atualizar();
         }
 
-        // Mover para os lados (Q e W)
         public void MoverLados(double deslocamento)
         {
             origem.X += deslocamento;
             AtualizarPosicao();
         }
 
-        // Alterar o tamanho (A e S)
         public void AlterarTamanho(double fator)
         {
             raio += fator;
-            if (raio < 0.1) raio = 0.1; // Limite mínimo para evitar tamanhos negativos ou muito pequenos
+            if (raio < 0.1) raio = 0.1;
             AtualizarPosicao();
         }
 
-        // Girar (Z e X)
         public void Girar(double incrementoAngulo)
         {
             angulo += incrementoAngulo;
@@ -60,7 +53,7 @@ namespace gcgcg
 
         private void Atualizar()
         {
-            PrimitivaTipo = PrimitiveType.Lines; // Sr. Palito é representado como uma linha
+            PrimitivaTipo = PrimitiveType.Lines; 
             base.ObjetoAtualizar();
         }
 

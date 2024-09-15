@@ -16,7 +16,6 @@ namespace gcgcg
 
         public Retangulo(Objeto _paiRef, ref char _rotulo, Ponto4D ptoInfEsq, Ponto4D ptoSupDir) : base(_paiRef, ref _rotulo)
         {
-            // Definir lista de primitivas geométricas
             primitivas = new List<PrimitiveType>
             {
                 PrimitiveType.Points,
@@ -28,11 +27,9 @@ namespace gcgcg
                 PrimitiveType.TriangleFan
             };
 
-            // Iniciar com a primeira primitiva (Points)
             PrimitivaTipo = primitivas[indicePrimitivaAtual];
             PrimitivaTamanho = 10;
 
-            // Adicionar os pontos do retângulo
             base.PontosAdicionar(ptoInfEsq);
             base.PontosAdicionar(new Ponto4D(ptoSupDir.X, ptoInfEsq.Y));
             base.PontosAdicionar(ptoSupDir);
@@ -40,7 +37,6 @@ namespace gcgcg
             Atualizar();
         }
 
-        // Método para alternar entre as primitivas geométricas
         public void AlternarPrimitiva()
         {
             indicePrimitivaAtual = (indicePrimitivaAtual + 1) % primitivas.Count;

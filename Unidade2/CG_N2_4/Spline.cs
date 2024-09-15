@@ -9,7 +9,7 @@ namespace gcgcg
     {
         private List<Ponto4D> pontosControle;
         private List<Ponto4D> pontosSpline;
-        private int qtdPontosSpline = 20; // Número inicial de pontos calculados na spline
+        private int qtdPontosSpline = 20;
 
         public Spline(Objeto _paiRef, ref char _rotulo, List<Ponto4D> pontosControle) : base(_paiRef, ref _rotulo)
         {
@@ -20,13 +20,12 @@ namespace gcgcg
         public void AlterarQtdPontosSpline(int incremento)
         {
             qtdPontosSpline += incremento;
-            if (qtdPontosSpline < 2) qtdPontosSpline = 2; // Mínimo de 2 pontos
+            if (qtdPontosSpline < 2) qtdPontosSpline = 2;
             CalcularSpline();
         }
 
         public void AtualizarPontoControle(int indice, double deslocX, double deslocY)
         {
-            // Atualiza a posição do ponto de controle selecionado
             pontosControle[indice].X += deslocX;
             pontosControle[indice].Y += deslocY;
             CalcularSpline();
@@ -34,10 +33,8 @@ namespace gcgcg
 
         private void CalcularSpline()
         {
-            // Limpa os pontos anteriores da spline
             pontosSpline = new List<Ponto4D>();
 
-            // Cálculo da spline (exemplo de uma curva de Bezier usando a fórmula geral)
             for (int i = 0; i <= qtdPontosSpline; i++)
             {
                 double t = i / (double)qtdPontosSpline;
@@ -48,7 +45,6 @@ namespace gcgcg
             Atualizar();
         }
 
-        // Exemplo de cálculo de uma spline (Bezier)
         private Ponto4D CalcularBezier(double t)
         {
             int n = pontosControle.Count - 1;
@@ -75,16 +71,14 @@ namespace gcgcg
 
         public void Atualizar()
         {
-            // Limpa os pontos anteriores
             base.pontosLista.Clear();
 
-            // Adiciona os pontos da spline
             foreach (var ponto in pontosSpline)
             {
                 base.PontosAdicionar(ponto);
             }
 
-            PrimitivaTipo = PrimitiveType.LineStrip; // Spline desenhada como uma linha conectada
+            PrimitivaTipo = PrimitiveType.LineStrip;
             base.ObjetoAtualizar();
         }
 
