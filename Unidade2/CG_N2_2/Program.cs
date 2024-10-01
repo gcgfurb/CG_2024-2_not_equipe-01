@@ -1,4 +1,4 @@
-using OpenTK.Mathematics;
+﻿using OpenTK.Mathematics;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
 
@@ -11,14 +11,16 @@ namespace gcgcg
             var nativeWindowSettings = new NativeWindowSettings()
             {
                 ClientSize = new Vector2i(800, 800),
-                Title = "2. Primitivas geométricas",
+                Title = "CG_N2_2",
                 // This is needed to run on macos
                 Flags = ContextFlags.ForwardCompatible,
             };
+
+            //TODO: encontrar o comando certo para não dar problema de dobrar a resolução de tela no MacOS
+            // ToolkitOptions.Default.EnableHighResolution = false;
 
             using var window = new Mundo(GameWindowSettings.Default, nativeWindowSettings);
             window.Run();
         }
     }
 }
-

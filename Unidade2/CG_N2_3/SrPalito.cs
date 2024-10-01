@@ -6,71 +6,69 @@ using OpenTK.Graphics.OpenGL4;
 
 namespace gcgcg
 {
-  internal class SrPalito : Objeto
-  {
-    private Ponto4D _inicio;
-    private Ponto4D _fim;
-    private double _angulo;
-    private double _raio;
-    private double _moverX;
-
-    public SrPalito(Objeto paiRef, ref char rotulo) : base(paiRef, ref rotulo)
+    internal class SrPalito : Objeto
     {
-      PrimitivaTipo = PrimitiveType.Lines;
-      PrimitivaTamanho = 1;
-      InicializarValores();
-      AdicionarPontos();
-    }
+        public Ponto4D Start { get; set; }
+        public Ponto4D End { get; set; }
 
-    private void InicializarValores()
-    {
-      _inicio = new Ponto4D(0, 0);
-      _fim = new Ponto4D(0.35, 0.35);
-      _moverX = 0;
-      _angulo = 45;
-      _raio = Matematica.Distancia(_inicio, _fim);
-    }
+        private double _angulo;
+        private double _raio;
+        private double _dislocaX;
 
-    private void AdicionarPontos()
-    {
-      base.PontosAdicionar(_inicio);
-      base.PontosAdicionar(_fim);
-      base.ObjetoAtualizar();
-    }
+        public SrPalito(Objeto paiRef, ref char rotulo) : base(paiRef, ref rotulo)
+        {
+            PrimitivaTipo = PrimitiveType.Lines;
+            PrimitivaTamanho = 1;
+            Start = new Ponto4D(0, 0);
+            End = new Ponto4D(0.35, 0.35);
+            _dislocaX = 0;
+            _angulo = 45;
+            _raio = Matematica.distancia(Start, End);
 
-    private void Atualizar()
-    {
-      _fim = Matematica.GerarPtosCirculo(_angulo, _raio);
-      _inicio.X = _moverX;
-      _fim.X += _moverX;
-      base.PontosAlterar(_inicio, 0);
-      base.PontosAlterar(_fim, 1);
-      base.ObjetoAtualizar();
-    }
+            AdicionarPontosIniciais();
+        }
 
-    public void AtualizarPe(double peInc)
-    {
-      _moverX += peInc;
-      Atualizar();
-    }
+        private void AdicionarPontosIniciais()
+        {
+            base.PontosAdicionar(Start);
+            base.PontosAdicionar(End);
+            base.ObjetoAtualizar();
+        }
 
-    public void AtualizarRaio(double raioInc)
-    {
-      _raio += raioInc;
-      Atualizar();
-    }
+        private void AtualizarPontos()
+        {
+            End = Matematica.GerarPtosCirculo(_angulo, _raio);
+            Start.X = _dislocaX;
+            End.X += _dislocaX;
 
-    public void AtualizarAngulo(double anguloInc)
-    {
-      _angulo += anguloInc;
-      Atualizar();
-    }
+            base.PontosAlterar(Start, 0);
+            base.PontosAlterar(End, 1);
+            base.ObjetoAtualizar();
+        }
+
+        public void Movimentar(double valor)
+        {
+            _dislocaX += valor;
+            AtualizarPontos();
+        }
+
+        public void MudaTamanho(double valor)
+        {
+            _raio += valor;
+            AtualizarPontos();
+        }
+
+        public void Girar(double valor)
+        {
+            _angulo += valor;
+            AtualizarPontos();
+        }
 
 #if CG_Debug
-    public override string ToString()
-    {
-      return $"__ Objeto SrPalito _ Tipo: {PrimitivaTipo} _ Tamanho: {PrimitivaTamanho}\n" + ImprimeToString();
-    }
+        public override string ToString()
+        {
+            return $"__ Objeto SrPalito _ Tipo: {PrimitivaTipo} _ Tamanho: {PrimitivaTamanho}\n{ImprimeToString()}";
+        }
 #endif
-  }
+    }
 }
