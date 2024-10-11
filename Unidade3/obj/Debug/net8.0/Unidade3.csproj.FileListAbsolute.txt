@@ -1,0 +1,15 @@
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/bin/Debug/net8.0/Unidade3
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/bin/Debug/net8.0/Unidade3.deps.json
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/bin/Debug/net8.0/Unidade3.runtimeconfig.json
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/bin/Debug/net8.0/Unidade3.dll
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/bin/Debug/net8.0/Unidade3.pdb
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/Unidade3.GeneratedMSBuildEditorConfig.editorconfig
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/Unidade3.AssemblyInfoInputs.cache
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/Unidade3.AssemblyInfo.cs
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/Unidade3.csproj.CoreCompileInputs.cache
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/Unidade3.sourcelink.json
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/Unidade3.dll
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/refint/Unidade3.dll
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/Unidade3.pdb
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/Unidade3.genruntimeconfig.cache
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/ref/Unidade3.dll
