@@ -1,0 +1,7 @@
+@startuml
+!include Program.puml
+!include Polygon.puml
+
+Program "1" --> "*" Polygon : Contém
+Polygon "1" --> "*" Polygon : Polígono filho
+@enduml

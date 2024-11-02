@@ -1,0 +1,13 @@
+@startuml
+class Program {
+  - List<Polygon> polygons
+  - Polygon selectedPolygon
+  - bool drawing
+
+  + StartDrawingPolygon(Vector2 mousePosition)
+  + EndDrawingPolygon()
+  + SelectPolygon(Vector2 mousePosition)
+  + MoveClosestVertex(Vector2 mousePosition)
+  + RemoveClosestVertex(Vector2 mousePosition)
+}
+@enduml

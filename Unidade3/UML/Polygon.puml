@@ -1,0 +1,20 @@
+@startuml
+class Polygon {
+  - List<Vector2> vertices
+  - bool isClosed
+  - Vector3 color
+  - List<Polygon> children
+  - Matrix4 transformMatrix
+
+  + AddVertex(Vector2 vertex)
+  + MoveClosestVertex(Vector2 mousePosition)
+  + RemoveClosestVertex(Vector2 mousePosition)
+  + ToggleOpenClose()
+  + SetColor(float r, float g, float b)
+  + Translate(float dx, float dy)
+  + Scale(float factor)
+  + Rotate(float angleDegrees)
+  + AddChild(Polygon child)
+  + Draw(Matrix4 parentMatrix)
+}
+@enduml
