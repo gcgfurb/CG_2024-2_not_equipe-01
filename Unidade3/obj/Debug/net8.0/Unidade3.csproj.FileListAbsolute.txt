@@ -13,3 +13,4 @@
 /home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/Unidade3.pdb
 /home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/Unidade3.genruntimeconfig.cache
 /home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/ref/Unidade3.dll
+/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/Debug/net8.0/Unidade3.csproj.AssemblyReference.cache
