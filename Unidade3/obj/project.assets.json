@@ -2,12 +2,6 @@
   "version": 3,
   "targets": {
     "net8.0": {
-      "Microsoft.NET.ILLink.Tasks/8.0.8": {
-        "type": "package",
-        "build": {
-          "build/Microsoft.NET.ILLink.Tasks.props": {}
-        }
-      },
       "OpenTK/4.8.2": {
         "type": "package",
         "dependencies": {
@@ -199,15 +193,6 @@
           }
         }
       },
-      "StbImageSharp/2.27.14": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/StbImageSharp.dll": {}
-        },
-        "runtime": {
-          "lib/netstandard2.0/StbImageSharp.dll": {}
-        }
-      },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {
         "type": "package",
         "compile": {
@@ -220,75 +205,10 @@
             "related": ".xml"
           }
         }
-      },
-      "CG_Biblioteca/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v8.0",
-        "dependencies": {
-          "OpenTK": "4.8.2",
-          "StbImageSharp": "2.27.14"
-        },
-        "compile": {
-          "bin/placeholder/CG_Biblioteca.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CG_Biblioteca.dll": {}
-        }
       }
     }
   },
   "libraries": {
-    "Microsoft.NET.ILLink.Tasks/8.0.8": {
-      "sha512": "P8wR6MUWwYXIjPJuBaZgo5zlI/GWI6QEAo6NyVIbPefa9CCkohYu7dP2rD/mrqnjEqfRHyl+h9VZrDoGpELqYg==",
-      "type": "package",
-      "path": "microsoft.net.illink.tasks/8.0.8",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "LICENSE.TXT",
-        "Sdk/Sdk.props",
-        "THIRD-PARTY-NOTICES.TXT",
-        "analyzers/dotnet/cs/ILLink.CodeFixProvider.dll",
-        "analyzers/dotnet/cs/ILLink.RoslynAnalyzer.dll",
-        "build/Microsoft.NET.ILLink.Analyzers.props",
-        "build/Microsoft.NET.ILLink.Tasks.props",
-        "build/Microsoft.NET.ILLink.targets",
-        "microsoft.net.illink.tasks.8.0.8.nupkg.sha512",
-        "microsoft.net.illink.tasks.nuspec",
-        "tools/net472/ILLink.Tasks.dll",
-        "tools/net472/ILLink.Tasks.dll.config",
-        "tools/net472/Mono.Cecil.Mdb.dll",
-        "tools/net472/Mono.Cecil.Pdb.dll",
-        "tools/net472/Mono.Cecil.Rocks.dll",
-        "tools/net472/Mono.Cecil.dll",
-        "tools/net472/Sdk/Sdk.props",
-        "tools/net472/System.Buffers.dll",
-        "tools/net472/System.Collections.Immutable.dll",
-        "tools/net472/System.Memory.dll",
-        "tools/net472/System.Numerics.Vectors.dll",
-        "tools/net472/System.Reflection.Metadata.dll",
-        "tools/net472/System.Runtime.CompilerServices.Unsafe.dll",
-        "tools/net472/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net472/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net472/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/ILLink.Tasks.deps.json",
-        "tools/net8.0/ILLink.Tasks.dll",
-        "tools/net8.0/Mono.Cecil.Mdb.dll",
-        "tools/net8.0/Mono.Cecil.Pdb.dll",
-        "tools/net8.0/Mono.Cecil.Rocks.dll",
-        "tools/net8.0/Mono.Cecil.dll",
-        "tools/net8.0/Sdk/Sdk.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Analyzers.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.Tasks.props",
-        "tools/net8.0/build/Microsoft.NET.ILLink.targets",
-        "tools/net8.0/illink.deps.json",
-        "tools/net8.0/illink.dll",
-        "tools/net8.0/illink.runtimeconfig.json",
-        "useSharedDesignerContext.txt"
-      ]
-    },
     "OpenTK/4.8.2": {
       "sha512": "s2bqkD0glaX5Zbrv0Nj91zcefGrwq+nAp7SnXw14Z22Wj1nVE9CWkEyKX8tha1EdxqSRwKdP6gi+xzZXs4nK4Q==",
       "type": "package",
@@ -455,19 +375,6 @@
         "opentk.windowing.graphicslibraryframework.nuspec"
       ]
     },
-    "StbImageSharp/2.27.14": {
-      "sha512": "4C38oL8igoocaywMr4+WDYoXwnVma3gm26heCAVgzWqO91MMPuhgqTlTT7vVpGDMo4/c0h2/zqQuAS6QxJKgmA==",
-      "type": "package",
-      "path": "stbimagesharp/2.27.14",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/net471/StbImageSharp.dll",
-        "lib/netstandard2.0/StbImageSharp.dll",
-        "stbimagesharp.2.27.14.nupkg.sha512",
-        "stbimagesharp.nuspec"
-      ]
-    },
     "System.Runtime.CompilerServices.Unsafe/5.0.0": {
       "sha512": "ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
       "type": "package",
@@ -499,83 +406,53 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
-    },
-    "CG_Biblioteca/1.0.0": {
-      "type": "project",
-      "path": "../../CG_Biblioteca/CG_Biblioteca.csproj",
-      "msbuildProject": "../../CG_Biblioteca/CG_Biblioteca.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
-      "CG_Biblioteca >= 1.0.0",
-      "Microsoft.NET.ILLink.Tasks >= 8.0.8",
-      "OpenTK >= 4.8.2",
-      "StbImageSharp >= 2.27.14"
+      "OpenTK >= 4.8.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\thivo\\.nuget\\packages\\": {}
+    "/home/joao/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\thivo\\Desktop\\CG-equipe 5\\CG_2024-2_not_equipe-05\\Unidade3\\CG_N3_Exemplo\\CG_N3_Exemplo.csproj",
-      "projectName": "CG_N3_Exemplo",
-      "projectPath": "C:\\Users\\thivo\\Desktop\\CG-equipe 5\\CG_2024-2_not_equipe-05\\Unidade3\\CG_N3_Exemplo\\CG_N3_Exemplo.csproj",
-      "packagesPath": "C:\\Users\\thivo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\thivo\\Desktop\\CG-equipe 5\\CG_2024-2_not_equipe-05\\Unidade3\\CG_N3_Exemplo\\obj\\",
+      "projectUniqueName": "/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/Unidade3.csproj",
+      "projectName": "Unidade3",
+      "projectPath": "/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/Unidade3.csproj",
+      "packagesPath": "/home/joao/.nuget/packages/",
+      "outputPath": "/home/joao/Documentos/CG_2024-2_not_equipe-01/Unidade3/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\thivo\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/joao/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {
-            "C:\\Users\\thivo\\Desktop\\CG-equipe 5\\CG_2024-2_not_equipe-05\\CG_Biblioteca\\CG_Biblioteca.csproj": {
-              "projectPath": "C:\\Users\\thivo\\Desktop\\CG-equipe 5\\CG_2024-2_not_equipe-05\\CG_Biblioteca\\CG_Biblioteca.csproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
         "dependencies": {
-          "Microsoft.NET.ILLink.Tasks": {
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[8.0.8, )",
-            "autoReferenced": true
-          },
           "OpenTK": {
             "target": "Package",
             "version": "[4.8.2, )"
-          },
-          "StbImageSharp": {
-            "target": "Package",
-            "version": "[2.27.14, )"
           }
         },
         "imports": [
@@ -594,7 +471,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.110/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
